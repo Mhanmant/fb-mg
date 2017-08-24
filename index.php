@@ -2,7 +2,7 @@
 $challenge = $_REQUEST['hub_challenge'];
 $verify_token = $_REQUEST['hub_verify_token'];
 // Set this Verify Token Value on your Facebook App 
-if ($verify_token === 'EAAZAqNsFwdW8BAAPyInka5JSmjSiZAsuTsj342qUaKKZBtoLzg2Sy3Y891jZCkhi3jrhUlHrfwYezxU5gPobCnLRLL0IVQbmMocHjZBsdsEt2nyEbjBSVGnVvXQXgXkqXJxGpTcojfr02t30PkYLCRLyL2iDAAXPKLEJJjOgZAYwZDZD') {
+if ($verify_token === 'Sumosponge') {
   echo $challenge;
 }
 $input = json_decode(file_get_contents('php://input'), true);
