@@ -2,17 +2,22 @@
 $access_token = "<ACCESS TOKEN>";
 $verify_token = "sumosponge";
 $hub_verify_token = null;
+
 if(isset($_REQUEST['hub_challenge'])) {
- $challenge = $_REQUEST['hub_challenge'];
- $hub_verify_token = $_REQUEST['hub_verify_token'];
+    $challenge = $_REQUEST['hub_challenge'];
+    $hub_verify_token = $_REQUEST['hub_verify_token'];
 }
+ 
 if ($hub_verify_token === $verify_token) {
- echo $challenge;
+    echo $challenge;
 }
+
 $input = json_decode(file_get_contents('php://input'), true);
+ 
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 $message = $input['entry'][0]['messaging'][0]['message']['text'];
-$message_to_reply = $message;
+
+$message_to_reply = "HEllo";
 
 //API Url
 $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token;
