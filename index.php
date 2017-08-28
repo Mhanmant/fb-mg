@@ -12,12 +12,8 @@ if ($hub_verify_token === $verify_token) {
 $input = json_decode(file_get_contents('php://input'), true);
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 $message = $input['entry'][0]['messaging'][0]['message']['text'];
-$message_to_reply = '';
-if ($message == 'สั่ง 1 ชิ้น 29 บาท') {
-    $message_to_reply = 'สนใจ 1 ชิ้นนะคะ 29 บาท ส่งลทบ 20 Ems 30 จะส่งแบบไหนดีคะ';
-}Else if ($message == 'สั่ง 4 ชิ้น 100 บาท') {
-    $message_to_reply = 'สนใจ 4 ชิ้นนะคะ 100 บาท ส่ง ลทบ ฟรี ถ้า Ems 30 บาท จะส่งแบบไหนดีจ๊ะ';
-}
+$message_to_reply = $message;
+
 //API Url
 $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token;
 //Initiate cURL.
